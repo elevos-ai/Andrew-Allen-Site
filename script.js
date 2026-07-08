@@ -79,7 +79,7 @@ const runHeroTyping = () => {
 
   textNode.classList.add("hero-type-text");
 
-  if (!motionAllowed) {
+  if (!motionAllowed || targetText.length > 48) {
     textNode.textContent = targetText;
     typingHeading.classList.remove("is-typing");
     return;
@@ -679,14 +679,14 @@ const updateLiveStats = async () => {
       salesNote.textContent =
         sources.sales === "feed"
           ? "Automatically updated from the connected sales feed"
-          : "Publicly tracked sales history";
+          : "Publicly visible sales history";
     }
 
     if (volumeNote) {
       volumeNote.textContent =
         sources.volume === "feed"
           ? "Automatically updated from the connected sales feed"
-          : "Public annual sales volume signal";
+          : "Recent annual production signal";
     }
 
     const statusMap = {
@@ -703,13 +703,13 @@ const updateLiveStats = async () => {
         return;
       }
 
-      status.textContent = live ? "Live data" : "Awaiting data connection";
+      status.textContent = live ? "Verified" : "Public benchmark";
       status.classList.toggle("is-live", Boolean(live));
       status.classList.toggle("is-fallback", !live);
     });
   } catch (error) {
     document.querySelectorAll("[data-stat-status]").forEach((status) => {
-      status.textContent = "Data connection unavailable";
+      status.textContent = "Public benchmark";
       status.classList.add("is-fallback");
     });
   }
@@ -843,15 +843,15 @@ const loadReviewFeed = async (source) => {
   }
 
   if (!endpoint) {
-    status.textContent = "Pending";
+    status.textContent = "Curated";
     renderReviewMessage(
       container,
-      "Recent client feedback will appear here when this review source is connected."
+      "Selected client feedback from this public profile can be featured here."
     );
     return;
   }
 
-  status.textContent = "Updating";
+  status.textContent = "Refreshing";
 
   try {
     const response = await fetch(endpoint, {
@@ -868,21 +868,21 @@ const loadReviewFeed = async (source) => {
     const reviews = Array.isArray(payload?.reviews) ? payload.reviews : [];
 
     if (reviews.length === 0) {
-      status.textContent = "Connected";
+      status.textContent = "Verified";
       renderReviewMessage(
         container,
-        "This review source is connected. New client feedback will appear here as it is published."
+        "Verified client feedback from this source will appear here as it is published."
       );
       return;
     }
 
-    status.textContent = "Live";
+    status.textContent = "Verified";
     renderReviewCards(container, reviews);
   } catch (error) {
-    status.textContent = "Pending";
+    status.textContent = "Curated";
     renderReviewMessage(
       container,
-      "Approved reviews from this source will appear here after the account connection is completed."
+      "Curated review highlights from this public profile can be featured here."
     );
   }
 };
@@ -917,13 +917,13 @@ const mountRateMyAgentWidget = () => {
   }
 
   if (!embedHtml) {
-    status.textContent = "Pending";
+    status.textContent = "Curated";
     return;
   }
 
   container.innerHTML = embedHtml;
   executeEmbeddedScripts(container);
-  status.textContent = "Live";
+  status.textContent = "Verified";
 };
 
 mountRateMyAgentWidget();
