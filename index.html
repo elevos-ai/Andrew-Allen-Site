@@ -110,7 +110,7 @@
       }
     </script>
   </head>
-  <body>
+  <body class="home-scroll-locked">
     <div class="page-shell luxury-shell">
       <header class="site-header">
         <a class="brand brand-wordmark" href="index.html" aria-label="Andrew Allen home">
@@ -143,6 +143,15 @@
         </nav>
       </header>
 
+      <nav class="section-jump-menu" aria-label="Page sections">
+        <span>Page Menu</span>
+        <a href="#home" data-section-jump>Hero</a>
+        <a href="#about" data-section-jump>Andrew</a>
+        <a href="#metrics" data-section-jump>Stats</a>
+        <a href="#reviews" data-section-jump>Reviews</a>
+        <a href="#client-experience" data-section-jump>Experience</a>
+      </nav>
+
       <main>
         <section class="luxury-hero hero" id="home">
           <div class="hero-media">
@@ -172,7 +181,68 @@
           </div>
         </section>
 
-        <section class="trust-strip luxury-metrics" aria-label="Key metrics">
+        <section class="section section-luxury realtor-section" id="about">
+          <div class="realtor-layout">
+            <div class="portrait-frame">
+              <img
+                src="Andrew-Allen.webp"
+                alt="Andrew Allen portrait"
+              />
+            </div>
+            <div class="realtor-copy">
+              <p class="eyebrow">My Profile</p>
+              <h2>Unpretentious, high-performing, and known to many clients simply as    “The Lake Guy.”</h2>
+              <p>
+                Andrew Allen is a member of the Distinguished Sales Club, a
+                16-time recipient of the prestigious Circle of Excellence award,
+                and a Presidents Producer award winner, presented to agents who
+                pair outstanding sales production with a demonstrated commitment
+                to high-quality customer service.
+              </p>
+              <p>
+                Awards and record sales numbers have never been the goal.
+                Andrew's reputation has come from doing a job he loves and
+                making clients his number one priority. He is known for being
+                absolutely honest and frank, practical in his advice, and
+                committed to getting things right the first time, from
+                professional staging and photography to pricing and launch
+                strategy.
+              </p>
+              <p>
+                Andrew is also a connector by nature. When someone mentions a
+                problem, his mental rolodex starts turning toward the person who
+                can solve it, whether it is real-estate related or not. That
+                energy, combined with a straightforward service style, is why
+                endorsements continue to show up across Facebook, Zillow, and
+                other public review platforms.
+              </p>
+              <p>
+                Andrew is 49, married, and the father of one boy and one girl.
+                He is deeply involved in school activities, the lake community
+                where his family lives, and the outdoor lifestyle that shaped
+                his “Lake Guy” identity, from sailing and slalom water skiing
+                to biking, hiking, and snow skiing.
+              </p>
+              <a class="service-link" href="lake-guy.html">Explore The Lake Guy</a>
+              <div class="trust-indicators">
+                <div>
+                  <strong data-countup="22+">22+</strong>
+                  <span>Years of experience</span>
+                </div>
+                <div>
+                  <strong data-countup="16x">16x</strong>
+                  <span>Circle of Excellence winner</span>
+                </div>
+                <div>
+                  <strong data-countup="553">553</strong>
+                  <span>Publicly shown sales</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="trust-strip luxury-metrics" id="metrics" aria-label="Key metrics">
           <div>
             <span data-countup="22 Years" data-stat="experienceYears">22 Years</span>
             <p>Representing buyers and sellers across North Jersey</p>
@@ -280,68 +350,7 @@
           </div>
         </section>
 
-        <section class="section section-luxury realtor-section" id="about">
-          <div class="realtor-layout">
-            <div class="portrait-frame">
-              <img
-                src="Andrew-Allen.webp"
-                alt="Andrew Allen portrait"
-              />
-            </div>
-            <div class="realtor-copy">
-              <p class="eyebrow">My Profile</p>
-              <h2>Unpretentious, high-performing, and known to many clients simply as    “The Lake Guy.”</h2>
-              <p>
-                Andrew Allen is a member of the Distinguished Sales Club, a
-                16-time recipient of the prestigious Circle of Excellence award,
-                and a Presidents Producer award winner, presented to agents who
-                pair outstanding sales production with a demonstrated commitment
-                to high-quality customer service.
-              </p>
-              <p>
-                Awards and record sales numbers have never been the goal.
-                Andrew's reputation has come from doing a job he loves and
-                making clients his number one priority. He is known for being
-                absolutely honest and frank, practical in his advice, and
-                committed to getting things right the first time, from
-                professional staging and photography to pricing and launch
-                strategy.
-              </p>
-              <p>
-                Andrew is also a connector by nature. When someone mentions a
-                problem, his mental rolodex starts turning toward the person who
-                can solve it, whether it is real-estate related or not. That
-                energy, combined with a straightforward service style, is why
-                endorsements continue to show up across Facebook, Zillow, and
-                other public review platforms.
-              </p>
-              <p>
-                Andrew is 49, married, and the father of one boy and one girl.
-                He is deeply involved in school activities, the lake community
-                where his family lives, and the outdoor lifestyle that shaped
-                his “Lake Guy” identity, from sailing and slalom water skiing
-                to biking, hiking, and snow skiing.
-              </p>
-              <a class="service-link" href="lake-guy.html">Explore The Lake Guy</a>
-              <div class="trust-indicators">
-                <div>
-                  <strong data-countup="22+">22+</strong>
-                  <span>Years of experience</span>
-                </div>
-                <div>
-                  <strong data-countup="16x">16x</strong>
-                  <span>Circle of Excellence winner</span>
-                </div>
-                <div>
-                  <strong data-countup="553">553</strong>
-                  <span>Publicly shown sales</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section class="signature-quote section" aria-label="Client experience">
+        <section class="signature-quote section" id="client-experience" aria-label="Client experience">
           <div class="signature-quote-layout">
             <div>
               <p class="eyebrow">Why Clients Stay With Andrew</p>
