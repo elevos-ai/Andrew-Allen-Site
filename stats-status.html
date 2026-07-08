@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex,nofollow" />
+    <title>Stats Connection Status | Andrew Allen Website</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="media-assistant-page">
+    <main class="media-assistant-shell">
+      <header class="media-assistant-heading">
+        <a href="index.html">Andrew Allen Website</a>
+        <p class="eyebrow">Private Diagnostic</p>
+        <h1>Stats status</h1>
+        <p>This page shows whether the homepage numbers are live or fallback values.</p>
+      </header>
+      <section class="media-results">
+        <dl class="media-results-grid" data-stats-diagnostics>
+          <div><dt>Experience</dt><dd data-diagnostic="experience">Checking...</dd></div>
+          <div><dt>Sales</dt><dd data-diagnostic="sales">Checking...</dd></div>
+          <div><dt>Rating</dt><dd data-diagnostic="rating">Checking...</dd></div>
+          <div><dt>Reviews</dt><dd data-diagnostic="reviews">Checking...</dd></div>
+          <div><dt>Annual volume</dt><dd data-diagnostic="volume">Checking...</dd></div>
+          <div><dt>Last response</dt><dd data-diagnostic="updatedAt">Checking...</dd></div>
+        </dl>
+        <div class="article-callout">
+          <strong>Required for live updates</strong>
+          <p>Google Business OAuth credentials are needed for rating and review totals. An authorized Compass, MLS, CRM, or reporting feed is needed for sales count and annual volume.</p>
+        </div>
+        <div class="article-callout">
+          <strong>Other connected features</strong>
+          <p>Lead submissions are stored in the private local inbox. The AI Media Assistant is configured, but the OpenAI API account needs available billing credit before image analysis can run.</p>
+        </div>
+      </section>
+    </main>
+    <script>
+      fetch("/api/stats")
+        .then((response) => response.json())
+        .then((payload) => {
+          const sources = payload.sources || {};
+          ["experience", "sales", "rating", "reviews", "volume"].forEach((key) => {
+            const node = document.querySelector(`[data-diagnostic="${key}"]`);
+            if (node) node.textContent = sources[key] || "not configured";
+          });
+          document.querySelector('[data-diagnostic="updatedAt"]').textContent =
+            payload.updatedAt ? new Date(payload.updatedAt).toLocaleString() : "Unavailable";
+        })
+        .catch(() => {
+          document.querySelectorAll("[data-diagnostic]").forEach((node) => {
+            node.textContent = "Endpoint unavailable";
+          });
+        });
+    </script>
+  </body>
+</html>

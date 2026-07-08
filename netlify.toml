@@ -1,0 +1,28 @@
+[build]
+  publish = "."
+  functions = "netlify/functions"
+
+[[redirects]]
+  from = "/api/reviews/google"
+  to = "/.netlify/functions/google-reviews"
+  status = 200
+
+[[redirects]]
+  from = "/api/reviews/zillow"
+  to = "/.netlify/functions/zillow-reviews"
+  status = 200
+
+[[redirects]]
+  from = "/api/stats"
+  to = "/.netlify/functions/stats"
+  status = 200
+
+[[redirects]]
+  from = "/api/lead"
+  to = "/.netlify/functions/lead"
+  status = 200
+
+[[redirects]]
+  from = "/api/media-assistant"
+  to = "/.netlify/functions/media-assistant"
+  status = 200

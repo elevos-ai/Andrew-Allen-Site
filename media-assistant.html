@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex,nofollow" />
+    <title>Media Assistant | Andrew Allen Website</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="media-assistant-page">
+    <main class="media-assistant-shell">
+      <header class="media-assistant-heading">
+        <a href="index.html">Andrew Allen Website</a>
+        <p class="eyebrow">Private Content Tool</p>
+        <h1>AI Image Uploading Assistant</h1>
+        <p>
+          Upload a property, portrait, closing-day, or logo image to receive a
+          clean filename, accessible alt text, crop guidance, placement notes,
+          and a simple publishing checklist for Andrew's website.
+        </p>
+      </header>
+
+      <section class="media-assistant-layout">
+        <form class="media-upload-card" data-media-assistant-form>
+          <label>
+            Access key
+            <input type="password" name="accessToken" autocomplete="current-password" required />
+          </label>
+          <label>
+            Website placement
+            <select name="placement">
+              <option>Homepage hero</option>
+              <option>Featured listing</option>
+              <option>Listing gallery</option>
+              <option>Andrew portrait</option>
+              <option>Closing-day story</option>
+              <option>Logo or brand asset</option>
+              <option>General website section</option>
+            </select>
+          </label>
+          <label class="media-dropzone">
+            <span>Choose a JPG, PNG, or WebP image</span>
+            <small>Maximum file size: 3 MB</small>
+            <input type="file" name="image" accept="image/jpeg,image/png,image/webp" required />
+          </label>
+          <button class="button button-primary" type="submit">Analyze Image</button>
+          <p class="media-assistant-status" data-media-status aria-live="polite"></p>
+        </form>
+
+        <div class="media-preview-card">
+          <div class="media-preview-empty" data-media-empty>Image preview</div>
+          <img data-media-preview alt="" hidden />
+        </div>
+      </section>
+
+      <section class="media-results" data-media-results hidden>
+        <div class="section-heading">
+          <p class="eyebrow">AI Recommendations</p>
+          <h2>Ready for review</h2>
+        </div>
+        <dl class="media-results-grid">
+          <div><dt>Filename</dt><dd data-media-result="suggestedFilename"></dd></div>
+          <div><dt>Alt text</dt><dd data-media-result="altText"></dd></div>
+          <div><dt>Caption</dt><dd data-media-result="caption"></dd></div>
+          <div><dt>Crop</dt><dd data-media-result="cropRecommendation"></dd></div>
+          <div><dt>Quality</dt><dd data-media-result="qualityNotes"></dd></div>
+          <div><dt>Placement</dt><dd data-media-result="placementNotes"></dd></div>
+        </dl>
+        <p class="lead-form-note">
+          This assistant analyzes and prepares media. Publishing still requires
+          adding the approved file to the site's hosting or connected media storage,
+          then replacing the matching image reference in the page.
+        </p>
+        <ol class="media-publish-steps">
+          <li>Save the approved image using the suggested filename.</li>
+          <li>Add it to the website folder beside the other image assets.</li>
+          <li>Replace the old image filename in the page that needs the update.</li>
+          <li>Commit the change to GitHub so the live host can redeploy.</li>
+        </ol>
+      </section>
+    </main>
+    <script src="media-assistant.js"></script>
+  </body>
+</html>
