@@ -1,6 +1,5 @@
 window.REVIEW_FEEDS = {
   google: "/api/reviews/google",
-  zillow: "/api/reviews/zillow",
 };
 
 window.RATE_MY_AGENT_WIDGET = {

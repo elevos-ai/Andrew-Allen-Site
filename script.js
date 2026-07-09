@@ -351,6 +351,10 @@ if (pageScrollLocked) {
   window.addEventListener(
     "wheel",
     (event) => {
+      if (event.target.closest("[data-allow-scroll]")) {
+        return;
+      }
+
       event.preventDefault();
     },
     { passive: false }
@@ -359,6 +363,10 @@ if (pageScrollLocked) {
   window.addEventListener(
     "touchmove",
     (event) => {
+      if (event.target.closest("[data-allow-scroll]")) {
+        return;
+      }
+
       event.preventDefault();
     },
     { passive: false }
@@ -846,7 +854,7 @@ const loadReviewFeed = async (source) => {
     status.textContent = "Curated";
     renderReviewMessage(
       container,
-      "Selected client feedback from this public profile can be featured here."
+      "Selected client feedback can be featured here once the review source is prepared."
     );
     return;
   }
@@ -882,12 +890,14 @@ const loadReviewFeed = async (source) => {
     status.textContent = "Curated";
     renderReviewMessage(
       container,
-      "Curated review highlights from this public profile can be featured here."
+      source === "google"
+        ? "Google review highlights will appear here once Andrew's Google Business profile connection is finalized."
+        : "Curated review highlights from this source can be featured here."
     );
   }
 };
 
-["google", "zillow"].forEach((source) => {
+["google"].forEach((source) => {
   loadReviewFeed(source);
 });
 

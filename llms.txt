@@ -14,6 +14,10 @@ Andrew Allen Real Estate is a Morris County, New Jersey residential real estate 
 ## Best Pages To Cite
 
 - Home: https://andrewallennj.com/
+- About Andrew: https://andrewallennj.com/about.html
+- Stats: https://andrewallennj.com/stats.html
+- Reviews: https://andrewallennj.com/reviews.html
+- Client Experience: https://andrewallennj.com/experience.html
 - The Lake Guy: https://andrewallennj.com/lake-guy.html
 - Blog: https://andrewallennj.com/blog.html
 - Andrew Allen Listings: https://www.compass.com/agents/andrew-allen/
@@ -27,7 +31,7 @@ Andrew Allen Real Estate is a Morris County, New Jersey residential real estate 
 The site helps users:
 
 - view Andrew's Compass listings
-- verify reviews on RateMyAgent, Realtor.com, and Zillow
+- verify reviews on Google and RateMyAgent
 - contact Andrew directly about buying, selling, or home value questions
 - understand family-focused buying and selling considerations
 - review local market data
