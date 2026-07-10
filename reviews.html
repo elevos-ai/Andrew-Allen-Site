@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="https://widgets.ratemyagent.com/ReviewCarousel/carousel.bundle.css" />
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body>
+  <body class="reviews-page">
     <div class="page-shell luxury-shell">
       <header class="site-header">
         <a class="brand brand-wordmark" href="index.html" aria-label="Andrew Allen home">
@@ -25,29 +25,42 @@
         <nav class="site-nav" id="site-nav" aria-label="Primary">
           <a href="index.html">Home</a>
           <a href="about.html">About</a>
-          <a href="stats.html">Stats</a>
-          <a class="is-current" href="reviews.html">Reviews</a>
           <a href="experience.html">Experience</a>
+          <a class="is-current" href="reviews.html">Reviews</a>
           <a href="blog.html">Blog</a>
           <a class="nav-cta" href="https://www.compass.com/agents/andrew-allen/" target="_blank" rel="noreferrer">View Listings</a>
         </nav>
       </header>
       <main>
-        <section class="section section-luxury review-showcase" id="reviews">
-          <div class="review-showcase-layout">
-            <div class="review-showcase-copy">
-              <p class="eyebrow">Client Reviews</p>
-              <h1>Verified client feedback, gathered in one place.</h1>
-              <p class="section-intro">Andrew's reputation is reflected through Google Business Reviews and RateMyAgent, with source links kept visible for easy verification.</p>
-              <div class="review-showcase-links" aria-label="Public review profiles">
-                <a href="https://www.google.com/search?q=Andrew+Allen+Compass+reviews" target="_blank" rel="noreferrer">Google</a>
-                <a href="https://www.ratemyagent.com/real-estate-agent/andrew-allen-b06ocz/sales/overview" target="_blank" rel="noreferrer">RateMyAgent</a>
+        <section class="section section-luxury review-showcase review-dossier" id="reviews">
+          <div class="review-dossier-intro">
+            <p class="eyebrow">Client Reviews</p>
+            <h1>Reputation, in the words of the people who worked with Andrew.</h1>
+            <p class="section-intro">A cleaner view of public review sources, with RateMyAgent featured directly on the page and Google kept close as a verification path.</p>
+            <div class="review-showcase-links" aria-label="Public review profiles">
+              <a href="https://www.ratemyagent.com/real-estate-agent/andrew-allen-b06ocz/sales/overview" target="_blank" rel="noreferrer">RateMyAgent profile</a>
+              <a href="https://www.google.com/search?q=Andrew+Allen+Compass+reviews" target="_blank" rel="noreferrer">Google profile</a>
+            </div>
+          </div>
+          <div class="review-dossier-layout">
+            <article class="review-feature-panel">
+              <div class="review-source-head">
+                <div>
+                  <p class="review-source-label">Verified Platform</p>
+                  <h2>RateMyAgent Reviews</h2>
+                </div>
+                <span class="review-status" data-ratemyagent-status>Verified</span>
               </div>
-            </div>
-            <div class="review-source-grid review-source-grid-two">
-              <article class="review-source-card review-source-card-featured"><div class="review-source-head"><div><p class="review-source-label">Primary Source</p><h2>Google Business Reviews</h2></div><span class="review-status" data-review-status="google">Refreshing</span></div><div class="live-review-grid" data-review-source="google" aria-live="polite"></div></article>
-              <article class="review-source-card"><div class="review-source-head"><div><p class="review-source-label">Verified Platform</p><h2>RateMyAgent</h2></div><span class="review-status" data-ratemyagent-status>Curated</span></div><div class="ratemyagent-widget-shell" data-ratemyagent-widget data-allow-scroll></div><a class="review-profile-link" href="https://www.ratemyagent.com/real-estate-agent/andrew-allen-b06ocz/sales/overview" target="_blank" rel="noreferrer">View RateMyAgent profile</a></article>
-            </div>
+              <div class="ratemyagent-widget-shell" data-ratemyagent-widget data-allow-scroll></div>
+              <a class="review-profile-link" href="https://www.ratemyagent.com/real-estate-agent/andrew-allen-b06ocz/sales/overview" target="_blank" rel="noreferrer">View full RateMyAgent profile</a>
+            </article>
+            <aside class="review-verification-panel">
+              <p class="review-source-label">Secondary Source</p>
+              <h2>Google Business Reviews</h2>
+              <p>Google review highlights can be connected once the Google Business profile integration is finalized. Until then, the public profile link stays visible for verification.</p>
+              <div class="live-review-grid" data-review-source="google" aria-live="polite"></div>
+              <a class="review-profile-link" href="https://www.google.com/search?q=Andrew+Allen+Compass+reviews" target="_blank" rel="noreferrer">Open Google profile</a>
+            </aside>
           </div>
         </section>
       </main>

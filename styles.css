@@ -13,6 +13,7 @@
   --shadow-soft: 0 18px 44px rgba(0, 0, 0, 0.1);
   --radius: 24px;
   --content-width: 1320px;
+  --header-height: 122px;
 }
 
 .sr-only {
@@ -429,6 +430,8 @@ a {
 }
 
 body.home-scroll-locked {
+  height: 100svh;
+  overflow: hidden;
   overscroll-behavior: none;
   scrollbar-width: none;
 }
@@ -439,22 +442,23 @@ body.home-scroll-locked::-webkit-scrollbar {
 
 .section-jump-menu {
   position: fixed;
-  right: 16px;
-  top: 50%;
+  right: 24px;
+  top: 138px;
   z-index: 60;
-  display: grid;
-  gap: 6px;
-  width: 136px;
-  padding: 10px;
+  display: flex;
+  align-items: center;
+  gap: 0;
+  width: auto;
+  padding: 0;
   border: 1px solid rgba(255, 255, 255, 0.16);
-  border-radius: 14px;
-  background: rgba(17, 17, 17, 0.78);
-  box-shadow: 0 16px 42px rgba(0, 0, 0, 0.18);
+  background: rgba(17, 17, 17, 0.7);
+  box-shadow: none;
   backdrop-filter: blur(14px);
-  transform: translateY(-50%);
+  transform: none;
 }
 
 .section-jump-menu span {
+  display: none;
   color: rgba(255, 255, 255, 0.62);
   font-size: 0.58rem;
   font-weight: 800;
@@ -465,15 +469,87 @@ body.home-scroll-locked::-webkit-scrollbar {
 .section-jump-menu a {
   display: flex;
   align-items: center;
-  min-height: 30px;
-  padding: 0 10px;
+  justify-content: center;
+  min-height: 34px;
+  padding: 0 14px;
+  border-left: 1px solid rgba(255, 255, 255, 0.14);
   border-radius: 999px;
   color: rgba(255, 255, 255, 0.92);
-  font-size: 0.64rem;
+  font-size: 0.62rem;
   font-weight: 800;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   transition: background-color 180ms ease, color 180ms ease, transform 180ms ease;
+}
+
+.experience-profile-section {
+  background: #ffffff;
+}
+
+.experience-profile-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 28px;
+}
+
+.experience-profile-card {
+  display: grid;
+  align-content: start;
+  gap: 12px;
+  min-height: 100%;
+  padding: 24px;
+  border: 1px solid rgba(17, 17, 17, 0.1);
+  border-radius: 22px;
+  background: #f8f8f8;
+}
+
+.experience-profile-card span,
+.experience-source-links a {
+  color: #666666;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.experience-profile-card h3 {
+  margin: 0;
+  color: #111111;
+  font-size: clamp(1.15rem, 1.5vw, 1.45rem);
+  line-height: 1.14;
+  letter-spacing: -0.04em;
+}
+
+.experience-profile-card p {
+  margin: 0;
+  color: #666666;
+  line-height: 1.7;
+}
+
+.experience-source-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.experience-source-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  padding: 0 16px;
+  border: 1px solid rgba(17, 17, 17, 0.12);
+  border-radius: 999px;
+  color: #111111;
+  background: #ffffff;
+}
+
+.experience-source-links a:hover,
+.experience-source-links a:focus-visible {
+  background: #111111;
+  color: #ffffff;
 }
 
 .section-jump-menu a:hover,
@@ -481,7 +557,7 @@ body.home-scroll-locked::-webkit-scrollbar {
 .section-jump-menu a.is-current {
   background: #ffffff;
   color: #111111;
-  transform: translateY(-1px);
+  transform: none;
 }
 
 .hero {
@@ -492,8 +568,8 @@ body.home-scroll-locked::-webkit-scrollbar {
 }
 
 .luxury-hero {
-  min-height: calc(100svh - 96px);
-  height: calc(100svh - 96px);
+  min-height: calc(100svh - var(--header-height));
+  height: calc(100svh - var(--header-height));
   margin-top: 0;
   border-radius: 0;
 }
@@ -544,8 +620,8 @@ body.home-scroll-locked::-webkit-scrollbar {
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  min-height: calc(100svh - 96px);
-  padding: 84px 24px 84px;
+  min-height: calc(100svh - var(--header-height));
+  padding: 118px 24px 64px;
   max-width: 1180px;
   margin: 0 auto;
   color: #f5f5f5;
@@ -1679,6 +1755,43 @@ body.is-loaded .button {
   object-fit: cover;
 }
 
+.about-guide-card {
+  margin-top: 28px;
+  padding: 24px;
+  border: 1px solid rgba(17, 17, 17, 0.1);
+  border-radius: 22px;
+  background: #f8f8f8;
+}
+
+.about-guide-label {
+  margin: 0 0 10px;
+  color: #666666;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.about-guide-card h2 {
+  margin: 0 0 10px;
+  color: #111111;
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(2rem, 3vw, 2.8rem);
+  line-height: 0.98;
+  letter-spacing: -0.04em;
+}
+
+.about-guide-card p:last-of-type {
+  margin-bottom: 0;
+}
+
+.about-guide-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 18px;
+}
+
 .trust-indicators {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -2325,6 +2438,178 @@ body.is-loaded .button {
   text-transform: uppercase;
 }
 
+body.reviews-page {
+  background: #ffffff;
+}
+
+body.reviews-page::before,
+body.reviews-page::after {
+  opacity: 0;
+}
+
+body.reviews-page .page-shell {
+  background: #ffffff;
+}
+
+body.reviews-page .review-showcase {
+  background: #ffffff;
+  box-shadow: none;
+}
+
+body.reviews-page .review-dossier {
+  padding: clamp(48px, 6vw, 96px) clamp(20px, 5vw, 72px);
+}
+
+body.reviews-page .review-dossier-intro {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(280px, 0.55fr);
+  gap: clamp(24px, 5vw, 72px);
+  align-items: end;
+  max-width: 1500px;
+  margin: 0 auto clamp(34px, 5vw, 72px);
+  padding-bottom: clamp(24px, 4vw, 48px);
+  border-bottom: 1px solid rgba(17, 17, 17, 0.1);
+}
+
+body.reviews-page .review-dossier-intro .eyebrow,
+body.reviews-page .review-dossier-intro h1 {
+  grid-column: 1;
+}
+
+body.reviews-page .review-dossier-intro .section-intro,
+body.reviews-page .review-dossier-intro .review-showcase-links {
+  grid-column: 2;
+}
+
+body.reviews-page .review-dossier-intro h1 {
+  max-width: 12ch;
+  margin: 0;
+  color: #111111;
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(4.2rem, 8vw, 9.5rem);
+  line-height: 0.82;
+  letter-spacing: -0.07em;
+}
+
+body.reviews-page .review-dossier-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 380px);
+  gap: clamp(22px, 3vw, 36px);
+  align-items: start;
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
+body.reviews-page .review-feature-panel {
+  min-width: 0;
+  padding: clamp(22px, 3vw, 36px);
+  border: 1px solid rgba(17, 17, 17, 0.1);
+  border-radius: 30px;
+  background:
+    linear-gradient(180deg, #ffffff 0%, #f8f8f8 100%);
+  box-shadow: 0 22px 70px rgba(0, 0, 0, 0.08);
+}
+
+body.reviews-page .review-verification-panel {
+  position: sticky;
+  top: 120px;
+  padding: 24px;
+  border-left: 2px solid #111111;
+  background: #ffffff;
+}
+
+body.reviews-page .review-verification-panel h2 {
+  margin: 6px 0 14px;
+  color: #111111;
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(2rem, 3vw, 3rem);
+  line-height: 0.95;
+  letter-spacing: -0.05em;
+}
+
+body.reviews-page .review-verification-panel > p:not(.review-source-label) {
+  margin: 0 0 18px;
+  color: #666666;
+  line-height: 1.75;
+}
+
+body.reviews-page .review-showcase-copy .eyebrow {
+  color: #666666;
+}
+
+body.reviews-page .review-showcase-copy h1,
+body.reviews-page .review-showcase-copy h2,
+body.reviews-page .review-source-head h2,
+body.reviews-page .review-source-head h3 {
+  color: #111111;
+}
+
+body.reviews-page .review-showcase-copy .section-intro,
+body.reviews-page .live-review-quote {
+  color: #666666;
+}
+
+body.reviews-page .review-showcase-links a {
+  background: #ffffff;
+  border-color: rgba(17, 17, 17, 0.14);
+  color: #111111;
+}
+
+body.reviews-page .review-showcase-links a:hover,
+body.reviews-page .review-showcase-links a:focus-visible {
+  background: #111111;
+  border-color: #111111;
+  color: #ffffff;
+}
+
+body.reviews-page .review-source-card,
+body.reviews-page .review-source-card-featured {
+  background: #ffffff;
+  border: 1px solid rgba(17, 17, 17, 0.12);
+  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.08);
+  color: #111111;
+  backdrop-filter: none;
+}
+
+body.reviews-page .review-source-card-featured {
+  background: #f8f8f8;
+}
+
+body.reviews-page .review-source-label {
+  color: #666666;
+}
+
+body.reviews-page .review-status {
+  background: #f7f7f7;
+  border-color: rgba(17, 17, 17, 0.12);
+  color: #111111;
+}
+
+body.reviews-page .live-review-card {
+  background: #ffffff;
+  border-color: rgba(17, 17, 17, 0.1);
+  color: #111111;
+}
+
+body.reviews-page .live-review-meta strong,
+body.reviews-page .live-review-meta span,
+body.reviews-page .live-review-date {
+  color: #111111;
+}
+
+body.reviews-page .ratemyagent-widget-shell {
+  min-height: 560px;
+  max-height: none;
+  padding: 0;
+  background: #ffffff;
+  border-radius: 24px;
+  box-shadow: none;
+}
+
+body.reviews-page .review-profile-link {
+  color: #111111;
+}
+
 .cta-banner {
   position: relative;
   overflow: hidden;
@@ -2354,14 +2639,19 @@ body.is-loaded .button {
   flex-wrap: wrap;
   gap: 14px;
   margin-top: 28px;
+  width: min(100%, 760px);
 }
 
 .hero-actions-centered {
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 .luxury-hero .hero-actions-centered {
   animation: exploreCardFloatIn 720ms cubic-bezier(0.18, 0.72, 0.22, 1) 220ms both;
+}
+
+.luxury-hero .hero-actions-centered .button {
+  flex: 1 1 260px;
 }
 
 .closing-section {
@@ -3691,14 +3981,36 @@ body.is-loaded .blog-card {
 
 .service-link {
   display: inline-flex;
+  align-items: center;
+  justify-content: center;
   margin-top: 16px;
-  color: var(--gold-bright);
+  min-height: 42px;
+  padding: 0 16px;
+  border-radius: 999px;
+  border: 1px solid rgba(17, 17, 17, 0.12);
+  background: #111111;
+  color: #ffffff;
   font-weight: 800;
+  font-size: 0.76rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 .service-link:hover,
 .service-link:focus-visible {
-  color: var(--text);
+  background: #ffffff;
+  color: #111111;
+}
+
+.service-link-secondary {
+  background: #ffffff;
+  color: #111111;
+}
+
+.service-link-secondary:hover,
+.service-link-secondary:focus-visible {
+  background: #111111;
+  color: #ffffff;
 }
 
 .site-footer a {
@@ -3930,6 +4242,7 @@ body.is-loaded .blog-card {
   .lead-grid,
   .testimonial-grid,
   .review-source-grid,
+  .experience-profile-grid,
   .trust-strip,
   .trust-indicators,
   .footer-luxury,
@@ -3983,6 +4296,12 @@ body.is-loaded .blog-card {
 }
 
 @media (max-width: 780px) {
+  html,
+  body {
+    width: 100%;
+    overflow-x: hidden;
+  }
+
   .page-shell {
     width: min(100% - 16px, var(--content-width));
     margin-top: 8px;
@@ -4055,29 +4374,24 @@ body.is-loaded .blog-card {
   }
 
   .section-jump-menu {
-    left: 12px;
-    right: 12px;
-    top: auto;
-    bottom: 12px;
+    right: 20px;
+    top: 132px;
+    bottom: auto;
     width: auto;
-    grid-template-columns: repeat(5, minmax(0, 1fr));
-    align-items: center;
-    gap: 6px;
-    padding: 10px;
-    border-radius: 22px;
+    gap: 0;
+    padding: 0;
     transform: none;
   }
 
   .section-jump-menu span {
-    grid-column: 1 / -1;
-    text-align: center;
+    display: none;
   }
 
   .section-jump-menu a {
     justify-content: center;
     min-height: 34px;
-    padding: 0 6px;
-    font-size: 0.62rem;
+    padding: 0 12px;
+    font-size: 0.58rem;
     letter-spacing: 0.04em;
   }
 
@@ -4092,15 +4406,22 @@ body.is-loaded .blog-card {
     padding: 14px;
   }
 
+  .site-header,
+  body.lake-guy-page .site-header {
+    background: rgba(255, 255, 255, 0.98);
+    border: 1px solid rgba(17, 17, 17, 0.1);
+  }
+
   .luxury-hero {
-    min-height: calc(100svh - 92px);
-    height: calc(100svh - 92px);
+    min-height: calc(100svh - var(--header-height));
+    height: calc(100svh - var(--header-height));
+    border-radius: 28px;
   }
 
   .luxury-hero .hero-copy {
-    min-height: calc(100svh - 92px);
+    min-height: calc(100svh - var(--header-height));
     justify-content: flex-end;
-    padding: 72px 20px 24px;
+    padding: 116px 20px 42px;
   }
 
   .lake-guy-hero {
@@ -4173,10 +4494,13 @@ body.is-loaded .blog-card {
   }
 
   .hero h1,
+  .section-heading h1,
   .section-heading h2,
   .cta-content h2,
+  .realtor-copy h1,
   .realtor-copy h2 {
-    font-size: clamp(2.8rem, 13vw, 4.3rem);
+    font-size: clamp(2.45rem, 11.5vw, 4rem);
+    line-height: 0.98;
   }
 
   .listing-grid-luxury,
@@ -4186,6 +4510,7 @@ body.is-loaded .blog-card {
   .listing-summary-grid,
   .testimonial-grid,
   .review-source-grid,
+  .experience-profile-grid,
   .trust-strip,
   .trust-indicators,
   .footer-luxury,
@@ -4199,6 +4524,8 @@ body.is-loaded .blog-card {
 
   .menu-toggle {
     display: inline-flex;
+    border-color: rgba(17, 17, 17, 0.12);
+    background: #ffffff;
   }
 
   .site-nav {
@@ -4209,8 +4536,8 @@ body.is-loaded .blog-card {
     gap: 10px;
     padding: 14px;
     border-radius: 22px;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    background: rgba(9, 11, 15, 0.92);
+    border: 1px solid rgba(17, 17, 17, 0.1);
+    background: rgba(255, 255, 255, 0.98);
     box-shadow: var(--shadow-soft);
   }
 
@@ -4224,12 +4551,36 @@ body.is-loaded .blog-card {
     justify-content: flex-start;
     padding: 0 14px;
     font-size: 0.92rem;
+    color: #111111;
+    border: 1px solid rgba(17, 17, 17, 0.08);
+    border-radius: 16px;
+    background: #ffffff;
+  }
+
+  .site-nav a.is-current {
+    background: #f7f7f7;
+    color: #111111;
+  }
+
+  .site-nav a.nav-cta:link,
+  .site-nav a.nav-cta:visited,
+  .site-nav a.nav-cta:hover,
+  .site-nav a.nav-cta:focus-visible,
+  .site-nav a.nav-cta:active {
+    justify-content: center;
+    background: #111111;
+    color: #ffffff;
   }
 
   .brand {
     width: auto;
     min-width: 0;
     flex: 1 1 auto;
+    gap: 10px;
+  }
+
+  .brand-text {
+    align-items: flex-start;
   }
 
   .brand-mark,
@@ -4240,19 +4591,22 @@ body.is-loaded .blog-card {
 
   .brand-text strong,
   .brand-text-compact strong {
-    font-size: 1.05rem;
+    font-size: clamp(0.95rem, 4.5vw, 1.08rem);
   }
 
   .brand-tagline {
     margin-top: 3px;
+    font-size: clamp(0.46rem, 2.2vw, 0.56rem);
+    letter-spacing: 0.08em;
+  }
+
+  .brand-stars {
+    gap: 0.28em;
     font-size: 0.5rem;
   }
 
   .site-nav a::after {
-    left: 14px;
-    right: auto;
-    width: calc(100% - 28px);
-    bottom: 6px;
+    display: none;
   }
 
   .valuation-hero .mock-field-group {
@@ -4299,14 +4653,22 @@ body.is-loaded .blog-card {
   .trust-strip {
     padding: 20px;
     gap: 10px;
+    border-radius: 28px;
   }
 
   .trust-strip div {
-    padding: 10px 0;
+    padding: 16px 0;
+    border-right: 0;
+    border-bottom: 1px solid rgba(17, 17, 17, 0.1);
+  }
+
+  .trust-strip div:last-child {
+    border-bottom: 0;
   }
 
   .section {
     padding: 22px 20px;
+    border-radius: 28px;
   }
 
   .section-heading-split {
@@ -4324,8 +4686,75 @@ body.is-loaded .blog-card {
   }
 
   .portrait-frame {
-    min-height: 360px;
+    min-height: 300px;
     border-radius: 26px;
+  }
+
+  .realtor-layout,
+  .signature-quote-layout,
+  .review-showcase-layout {
+    gap: 22px;
+  }
+
+  .review-showcase-copy {
+    grid-template-columns: 1fr;
+    align-items: start;
+    gap: 16px;
+  }
+
+  body.reviews-page .review-dossier-intro,
+  body.reviews-page .review-dossier-layout {
+    grid-template-columns: 1fr;
+  }
+
+  body.reviews-page .review-dossier-intro .eyebrow,
+  body.reviews-page .review-dossier-intro h1,
+  body.reviews-page .review-dossier-intro .section-intro,
+  body.reviews-page .review-dossier-intro .review-showcase-links {
+    grid-column: 1;
+  }
+
+  body.reviews-page .review-dossier-intro h1 {
+    max-width: 10ch;
+    font-size: clamp(3.4rem, 14vw, 6.5rem);
+  }
+
+  body.reviews-page .review-verification-panel {
+    position: static;
+    border-left: 0;
+    border-top: 2px solid #111111;
+    padding: 22px 0 0;
+  }
+
+  .review-showcase-copy h1,
+  .signature-quote-layout h1 {
+    font-size: clamp(2.45rem, 11vw, 3.8rem);
+  }
+
+  .review-source-card {
+    border-radius: 20px;
+  }
+
+  .reviews-page .review-showcase {
+    padding-top: 28px;
+  }
+
+  body.reviews-page .review-source-card,
+  body.reviews-page .review-source-card-featured {
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.07);
+  }
+
+  body.reviews-page .ratemyagent-widget-shell {
+    min-height: 440px;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .ratemyagent-widget-shell iframe,
+  .ratemyagent-widget-shell .review-carousel-markup-container {
+    min-width: 0;
+    max-width: 100%;
   }
 
   .review-source-head,
@@ -4365,11 +4794,29 @@ body.is-loaded .blog-card {
 
   .review-showcase-links {
     gap: 10px;
+    justify-content: stretch;
   }
 
   .review-showcase-links a {
     width: 100%;
     justify-content: center;
+  }
+
+  .experience-profile-card {
+    padding: 20px;
+  }
+
+  .experience-source-links a {
+    width: 100%;
+  }
+
+  .about-guide-card {
+    padding: 20px;
+  }
+
+  .about-guide-actions .service-link {
+    width: 100%;
+    margin-top: 0;
   }
 
   .sold-stories-track {
@@ -4389,6 +4836,289 @@ body.is-loaded .blog-card {
   .luxury-hero .hero-actions-centered {
     animation-duration: 560ms;
     animation-delay: 120ms;
+  }
+}
+
+@media (max-width: 520px) {
+  :root {
+    --header-height: 110px;
+  }
+
+  .page-shell {
+    width: min(100% - 10px, var(--content-width));
+    margin-top: 5px;
+  }
+
+  .site-header {
+    top: 5px;
+    padding: 10px;
+    border-radius: 20px;
+  }
+
+  .brand-mark,
+  .brand-mark-word {
+    width: 40px;
+    height: 40px;
+  }
+
+  .brand-text {
+    align-items: flex-start;
+  }
+
+  .menu-toggle {
+    width: 42px;
+    height: 42px;
+    border-color: rgba(17, 17, 17, 0.12);
+    background: #ffffff;
+  }
+
+  .section-jump-menu {
+    display: none;
+  }
+
+  .luxury-hero {
+    min-height: calc(100svh - var(--header-height));
+    height: calc(100svh - var(--header-height));
+  }
+
+  .luxury-hero .hero-copy {
+    min-height: calc(100svh - var(--header-height));
+    padding: 76px 18px 24px;
+  }
+
+  .hero-actions,
+  .luxury-hero .hero-actions-centered,
+  .lake-guy-hero-actions {
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .button,
+  .service-link,
+  .review-profile-link {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .section,
+  .trust-strip,
+  .site-footer,
+  .review-source-card,
+  .signature-quote-card,
+  .pathway-card,
+  .form-card {
+    border-radius: 22px;
+  }
+
+  .review-source-head {
+    gap: 10px;
+  }
+
+  .review-status {
+    align-self: flex-start;
+  }
+
+  .ratemyagent-widget-shell {
+    min-height: 390px;
+    max-height: 520px;
+    padding: 8px;
+  }
+
+  body.reviews-page .ratemyagent-widget-shell {
+    min-height: 390px;
+    padding: 0;
+  }
+
+  body.reviews-page .review-dossier {
+    padding: 32px 14px;
+  }
+
+  body.reviews-page .review-feature-panel {
+    padding: 16px;
+    border-radius: 22px;
+  }
+
+  body.reviews-page .review-dossier-intro h1 {
+    max-width: 100%;
+    font-size: clamp(3rem, 15vw, 4.8rem);
+  }
+
+  .lake-guy-hero-copy h1,
+  .hero h1,
+  .section-heading h1,
+  .section-heading h2,
+  .realtor-copy h1,
+  .realtor-copy h2,
+  .review-showcase-copy h1,
+  .signature-quote-layout h1 {
+    font-size: clamp(2.25rem, 12vw, 3.35rem);
+  }
+
+  .hero-text,
+  .section-intro,
+  .realtor-copy p,
+  .signature-quote-card p {
+    font-size: 1rem;
+    line-height: 1.65;
+  }
+}
+
+/* Professional refinement: remove soft template bubbles across the site. */
+.site-header,
+.section,
+.trust-strip,
+.site-footer,
+.hero,
+.feature-page .hero,
+.section-jump-menu,
+.site-nav,
+.site-nav a,
+.menu-toggle,
+.button,
+.service-link,
+.review-profile-link,
+.review-showcase-links a,
+.experience-source-links a,
+.social-row a,
+.about-guide-card,
+.experience-profile-card,
+.review-feature-panel,
+.review-verification-panel,
+.review-source-card,
+.live-review-card,
+.ratemyagent-widget-shell,
+.signature-quote-card,
+.portrait-frame,
+.trust-indicators div,
+.trust-indicators strong,
+.pathway-card,
+.pathway-card-featured,
+.property-card,
+.testimonial-card,
+.form-card,
+.contact-card,
+.blog-card,
+.blog-featured,
+.blog-cta,
+.article-hero-image,
+.article-cta,
+.faq-item,
+.integration-copy,
+.integration-map,
+.lake-guide-highlight,
+.lake-guy-hero,
+.lake-guy-signal-card,
+.lake-guy-pill-row span,
+.mock-field,
+.review-status {
+  border-radius: 0 !important;
+}
+
+.section,
+.trust-strip,
+.about-guide-card,
+.experience-profile-card,
+.review-feature-panel,
+.review-source-card,
+.signature-quote-card,
+.pathway-card,
+.property-card,
+.testimonial-card,
+.form-card,
+.contact-card,
+.faq-item,
+.blog-card {
+  box-shadow: none !important;
+}
+
+.section,
+.trust-strip,
+.about-guide-card,
+.experience-profile-card,
+.review-feature-panel,
+.review-source-card,
+.signature-quote-card,
+.faq-item {
+  border-color: rgba(17, 17, 17, 0.14) !important;
+}
+
+.button,
+.service-link,
+.review-profile-link,
+.review-showcase-links a,
+.experience-source-links a,
+.social-row a {
+  min-height: 44px;
+  border-radius: 0 !important;
+  letter-spacing: 0.1em;
+}
+
+.button:hover,
+.button:focus-visible,
+.service-link:hover,
+.service-link:focus-visible,
+.review-profile-link:hover,
+.review-profile-link:focus-visible,
+.review-showcase-links a:hover,
+.review-showcase-links a:focus-visible,
+.experience-source-links a:hover,
+.experience-source-links a:focus-visible {
+  transform: none;
+}
+
+.site-header {
+  box-shadow: none;
+}
+
+.menu-toggle {
+  border: 1px solid rgba(17, 17, 17, 0.18);
+}
+
+.section-jump-menu {
+  background: rgba(17, 17, 17, 0.9);
+}
+
+.about-guide-card,
+.experience-profile-card,
+body.reviews-page .review-feature-panel {
+  background: #ffffff;
+}
+
+.about-guide-card {
+  border-left: 4px solid #111111;
+}
+
+.about-guide-card h2 {
+  max-width: 12ch;
+  font-size: clamp(2.4rem, 4vw, 4.2rem);
+}
+
+.experience-profile-grid,
+.review-dossier-layout {
+  align-items: stretch;
+}
+
+body.reviews-page .review-verification-panel {
+  border-left: 4px solid #111111;
+}
+
+body.reviews-page .ratemyagent-widget-shell {
+  background: transparent;
+}
+
+@media (max-width: 780px) {
+  .site-header,
+  .section,
+  .trust-strip,
+  .feature-page .hero {
+    border-radius: 0 !important;
+  }
+
+  body.reviews-page .review-verification-panel {
+    border-left: 0;
+    border-top: 4px solid #111111;
   }
 }
 
