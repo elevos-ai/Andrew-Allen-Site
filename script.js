@@ -1,13 +1,78 @@
-const revealNodes = document.querySelectorAll(
-  ".hero, .trust-strip, .section, .site-footer"
+const uniqueNodes = (selector) => [...new Set(document.querySelectorAll(selector))];
+
+const revealNodes = uniqueNodes(
+  [
+    ".hero",
+    ".section",
+    ".section-heading",
+    ".trust-strip",
+    ".site-footer",
+    ".footer-luxury > *",
+    ".realtor-layout > *",
+    ".portrait-frame",
+    ".about-guide-card",
+    ".experience-profile-card",
+    ".signature-quote-layout > *",
+    ".review-dossier-intro",
+    ".review-feature-panel",
+    ".review-verification-panel",
+    ".review-source-card",
+    ".live-review-card",
+    ".lake-guy-layout > *",
+    ".lake-guy-proof-card",
+    ".lake-guide-highlight",
+    ".lake-guy-signal-card",
+    ".blog-masthead",
+    ".blog-featured",
+    ".blog-featured > *",
+    ".blog-card",
+    ".blog-cta",
+    ".article-header",
+    ".article-hero-image",
+    ".article-prose > *",
+    ".article-cta",
+    ".market-panel",
+    ".integration-copy",
+    ".integration-map",
+    ".form-card",
+    ".contact-card"
+  ].join(", ")
 );
 
-const staggerGroups = document.querySelectorAll(
-  ".trust-strip, .market-grid, .services-grid, .listing-grid, .chips, .source-list, .search-steps, .search-results-preview, .valuation-points, .valuation-process"
+const staggerGroups = uniqueNodes(
+  [
+    ".trust-strip",
+    ".market-grid",
+    ".services-grid",
+    ".listing-grid",
+    ".chips",
+    ".source-list",
+    ".search-steps",
+    ".search-results-preview",
+    ".valuation-points",
+    ".valuation-process",
+    ".review-dossier-layout",
+    ".review-source-grid",
+    ".review-proof-strip",
+    ".experience-profile-grid",
+    ".blog-grid",
+    ".blog-list",
+    ".lake-guy-pill-row",
+    ".lake-guy-signal-grid",
+    ".lake-guy-proof-stack",
+    ".footer-luxury",
+    ".article-prose"
+  ].join(", ")
 );
 
-revealNodes.forEach((node) => {
+revealNodes.forEach((node, index) => {
   node.setAttribute("data-reveal", "");
+
+  if (index % 3 === 1) {
+    node.setAttribute("data-reveal-style", "soft-left");
+  } else if (index % 3 === 2) {
+    node.setAttribute("data-reveal-style", "soft-right");
+  }
 });
 
 const heroReveal = document.querySelector(".luxury-hero");
@@ -55,6 +120,7 @@ const menuToggle = document.querySelector(".menu-toggle");
 const leadForms = document.querySelectorAll("[data-lead-form]");
 const reviewFeeds = window.REVIEW_FEEDS || {};
 const rateMyAgentWidget = window.RATE_MY_AGENT_WIDGET || {};
+const googleReviewsWidget = window.GOOGLE_REVIEWS_WIDGET || {};
 const countupNodes = document.querySelectorAll("[data-countup]");
 const pageScrollLocked = document.body.classList.contains("home-scroll-locked");
 const scrollProgress = document.createElement("div");
@@ -664,6 +730,11 @@ const updateLiveStats = async () => {
         return;
       }
 
+      if (node.dataset.statStaticLabel) {
+        node.textContent = node.dataset.statStaticLabel;
+        return;
+      }
+
       if (node.hasAttribute("data-countup")) {
         node.setAttribute("data-countup", formatted);
 
@@ -686,15 +757,15 @@ const updateLiveStats = async () => {
     if (salesNote) {
       salesNote.textContent =
         sources.sales === "feed"
-          ? "Automatically updated from the connected sales feed"
-          : "Publicly visible sales history";
+          ? "Updated sales momentum"
+          : "Proven results across Morris County and North Jersey";
     }
 
     if (volumeNote) {
       volumeNote.textContent =
         sources.volume === "feed"
-          ? "Automatically updated from the connected sales feed"
-          : "Recent annual production signal";
+          ? "Updated production insight"
+          : "Recent production supporting smart pricing strategy";
     }
 
     const statusMap = {
@@ -806,7 +877,7 @@ const renderReviewCards = (container, reviews) => {
 
     const quote = document.createElement("p");
     quote.className = "live-review-quote";
-    quote.textContent = `“${review.text || "Review text unavailable."}”`;
+    quote.textContent = `“${review.text || "Client review."}”`;
 
     const meta = document.createElement("div");
     meta.className = "live-review-meta";
@@ -851,15 +922,15 @@ const loadReviewFeed = async (source) => {
   }
 
   if (!endpoint) {
-    status.textContent = "Curated";
+    status.textContent = "Featured";
     renderReviewMessage(
       container,
-      "Selected client feedback can be featured here once the review source is prepared."
+      "Client reviews are loading."
     );
     return;
   }
 
-  status.textContent = "Refreshing";
+  status.textContent = "Loading";
 
   try {
     const response = await fetch(endpoint, {
@@ -879,7 +950,7 @@ const loadReviewFeed = async (source) => {
       status.textContent = "Verified";
       renderReviewMessage(
         container,
-        "Verified client feedback from this source will appear here as it is published."
+        "Client reviews are loading."
       );
       return;
     }
@@ -887,19 +958,13 @@ const loadReviewFeed = async (source) => {
     status.textContent = "Verified";
     renderReviewCards(container, reviews);
   } catch (error) {
-    status.textContent = "Curated";
+    status.textContent = "Featured";
     renderReviewMessage(
       container,
-      source === "google"
-        ? "Google review highlights will appear here once Andrew's Google Business profile connection is finalized."
-        : "Curated review highlights from this source can be featured here."
+      "Client reviews are loading."
     );
   }
 };
-
-["google"].forEach((source) => {
-  loadReviewFeed(source);
-});
 
 const executeEmbeddedScripts = (container) => {
   container.querySelectorAll("script").forEach((oldScript) => {
@@ -913,6 +978,57 @@ const executeEmbeddedScripts = (container) => {
     oldScript.replaceWith(script);
   });
 };
+
+const loadGoogleReviewFallback = () => {
+  loadReviewFeed("google");
+};
+
+const mountGoogleReviewsWidget = () => {
+  const container = document.querySelector("[data-google-reviews-widget]");
+  const status = document.querySelector('[data-review-status="google"]');
+
+  if (!container) {
+    loadGoogleReviewFallback();
+    return;
+  }
+
+  const provider = googleReviewsWidget.provider || "Google Reviews";
+  const appId = (googleReviewsWidget.appId || "").trim();
+  const embedHtml = (googleReviewsWidget.embedHtml || "").trim();
+
+  if (embedHtml) {
+    container.innerHTML = embedHtml;
+    executeEmbeddedScripts(container);
+    if (status) status.textContent = "Verified";
+    return;
+  }
+
+  if (appId) {
+    container.innerHTML = `<div class="elfsight-app-${appId}" data-elfsight-app-lazy></div>`;
+
+    if (!document.querySelector('script[src="https://elfsightcdn.com/platform.js"]')) {
+      const script = document.createElement("script");
+      script.src = "https://elfsightcdn.com/platform.js";
+      script.async = true;
+      document.head.appendChild(script);
+    }
+
+    if (status) status.textContent = "Verified";
+    return;
+  }
+
+  container.innerHTML = `
+    <article class="third-party-widget-placeholder">
+      <p class="review-source-label">${provider}</p>
+      <p>Google reviews are loading.</p>
+      <a href="https://www.google.com/search?q=Andrew+Allen+Compass+reviews" target="_blank" rel="noreferrer">Open Google reviews</a>
+    </article>
+  `;
+
+  loadGoogleReviewFallback();
+};
+
+mountGoogleReviewsWidget();
 
 const mountRateMyAgentWidget = () => {
   const container = document.querySelector("[data-ratemyagent-widget]");

@@ -2,6 +2,15 @@ window.REVIEW_FEEDS = {
   google: "/api/reviews/google",
 };
 
+window.GOOGLE_REVIEWS_WIDGET = {
+  provider: "Elfsight",
+  createUrl: "https://elfsight.com/google-reviews-widget/create/",
+  // After creating the Elfsight widget, paste only the app id here.
+  // Example: appId: "00000000-0000-0000-0000-000000000000"
+  appId: "c62546fb-10b6-4e6b-ab55-95535afd17f6",
+  embedHtml: "",
+};
+
 window.RATE_MY_AGENT_WIDGET = {
   profileUrl: "https://www.ratemyagent.com/real-estate-agent/andrew-allen-b06ocz/sales/overview",
   embedHtml: `

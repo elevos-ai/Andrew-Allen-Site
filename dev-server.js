@@ -25,6 +25,8 @@ const mimeTypes = {
 };
 
 const handlers = {
+  "/oauth/google/start": require("./lib/google-oauth-helper-handler").googleOAuthStartHandler,
+  "/oauth/google/callback": require("./lib/google-oauth-helper-handler").googleOAuthCallbackHandler,
   "/api/reviews/google": require("./api/reviews/google"),
   "/api/reviews/zillow": require("./api/reviews/zillow"),
   "/api/stats": require("./api/stats"),
