@@ -198,6 +198,8 @@ a {
   display: block;
   width: clamp(260px, 24vw, 390px);
   height: auto;
+  padding: 0;
+  background: transparent;
 }
 
 .brand-mark {
@@ -5319,10 +5321,41 @@ body.home-page .luxury-hero .hero-copy {
   color: #ffffff;
 }
 
+.hero-logo-lockup {
+  display: flex;
+  align-items: center;
+  gap: clamp(8px, 1.2vw, 16px);
+  text-decoration: none;
+}
+
+.hero-logo-panel {
+  display: grid;
+  place-items: center;
+  background: #050505;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.28);
+}
+
+.hero-logo-panel img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.hero-logo-panel-andrew {
+  width: clamp(220px, 24vw, 390px);
+  padding: clamp(8px, 1vw, 12px) clamp(12px, 1.4vw, 18px);
+}
+
+.hero-logo-panel-compass {
+  width: clamp(146px, 14vw, 250px);
+  padding: clamp(17px, 1.9vw, 28px) clamp(14px, 1.6vw, 22px);
+}
+
 .hero-brand .brand-logo-image {
   width: clamp(280px, 30vw, 470px);
-  padding: clamp(8px, 1.1vw, 14px) clamp(10px, 1.4vw, 18px);
-  background: rgba(255, 255, 255, 0.94);
+  padding: 0;
+  background: transparent;
 }
 
 .hero-brand .brand-mark,
@@ -5530,6 +5563,21 @@ body.reviews-page .ratemyagent-widget-shell {
     max-width: calc(100% - 110px);
   }
 
+  body.home-page .hero-brand.hero-logo-lockup {
+    max-width: calc(100vw - 36px);
+    gap: 6px;
+  }
+
+  body.home-page .hero-logo-panel-andrew {
+    width: min(54vw, 220px);
+    padding: 6px 8px;
+  }
+
+  body.home-page .hero-logo-panel-compass {
+    width: min(34vw, 140px);
+    padding: 13px 10px;
+  }
+
   body:not(.home-scroll-locked) main {
     padding-bottom: 34px;
   }
@@ -5733,6 +5781,21 @@ body.reviews-page .ratemyagent-widget-shell {
 @media (max-width: 390px) {
   :root {
     --header-height: 80px;
+  }
+
+  body.home-page .hero-brand.hero-logo-lockup {
+    top: 14px;
+    left: 14px;
+    max-width: calc(100vw - 28px);
+  }
+
+  body.home-page .hero-logo-panel-andrew {
+    width: 55vw;
+  }
+
+  body.home-page .hero-logo-panel-compass {
+    width: 31vw;
+    padding: 12px 8px;
   }
 
   .brand-mark,

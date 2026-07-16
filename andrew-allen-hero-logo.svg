@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 320" role="img" aria-labelledby="title desc">
+  <title id="title">Andrew Allen logo</title>
+  <desc id="desc">Andrew Allen AA monogram with Experience Energy Honesty tagline and five stars.</desc>
+  <g fill="none" stroke="#fff" stroke-linecap="square" stroke-linejoin="miter">
+    <path d="M184 146 238 24h17l12 27" stroke-width="11"/>
+    <path d="M207 146 248 58l44 88" stroke-width="11"/>
+    <path d="M223 102h53" stroke-width="10"/>
+    <path d="M244 127h61" stroke-width="10"/>
+  </g>
+
+  <g fill="#fff">
+    <text x="38" y="214" font-family="Manrope, Arial, Helvetica, sans-serif" font-size="62" font-weight="400" letter-spacing="-3">Andrew Allen</text>
+    <text x="36" y="252" font-family="Manrope, Arial, Helvetica, sans-serif" font-size="27" font-weight="400">Experience</text>
+    <text x="213" y="252" font-family="Manrope, Arial, Helvetica, sans-serif" font-size="27" font-weight="400">|</text>
+    <text x="245" y="252" font-family="Manrope, Arial, Helvetica, sans-serif" font-size="27" font-weight="400">Energy</text>
+    <text x="348" y="252" font-family="Manrope, Arial, Helvetica, sans-serif" font-size="27" font-weight="400">|</text>
+    <text x="381" y="252" font-family="Manrope, Arial, Helvetica, sans-serif" font-size="27" font-weight="400">Honesty</text>
+    <text x="154" y="294" font-family="Georgia, 'Times New Roman', serif" font-size="27" letter-spacing="12">★★★★★</text>
+  </g>
+</svg>
