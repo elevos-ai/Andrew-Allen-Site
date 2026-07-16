@@ -194,6 +194,12 @@ a {
   gap: 16px;
 }
 
+.brand-logo-image {
+  display: block;
+  width: clamp(190px, 17vw, 260px);
+  height: auto;
+}
+
 .brand-mark {
   display: grid;
   place-items: center;
@@ -4760,6 +4766,10 @@ body.is-loaded .blog-card {
     gap: 10px;
   }
 
+  .brand-logo-image {
+    width: clamp(170px, 48vw, 220px);
+  }
+
   .brand-text {
     align-items: flex-start;
   }
@@ -5460,6 +5470,10 @@ body.reviews-page .ratemyagent-widget-shell {
     max-width: calc(100% - 58px);
   }
 
+  .brand-logo-image {
+    width: min(180px, 52vw);
+  }
+
   .brand-text {
     min-width: 0;
   }
@@ -5600,6 +5614,10 @@ body.reviews-page .ratemyagent-widget-shell {
 
   .brand {
     gap: 9px;
+  }
+
+  .brand-logo-image {
+    width: min(170px, 54vw);
   }
 
   .brand-mark,

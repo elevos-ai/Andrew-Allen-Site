@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 150" role="img" aria-labelledby="title desc">
+  <title id="title">Andrew Allen Morris County Real Estate logo</title>
+  <desc id="desc">Andrew Allen AA monogram with Morris County Real Estate wordmark and five stars.</desc>
+  <g fill="none" stroke="currentColor" stroke-linecap="square" stroke-linejoin="miter">
+    <path d="M17 136 71 14h17l12 27" stroke-width="11"/>
+    <path d="M40 136 81 48l44 88" stroke-width="11"/>
+    <path d="M56 92h53" stroke-width="10"/>
+    <path d="M77 117h61" stroke-width="10"/>
+  </g>
+  <g fill="currentColor">
+    <text x="178" y="58" font-family="Manrope, Arial, sans-serif" font-size="34" font-weight="500" letter-spacing="-1.4">Andrew Allen</text>
+    <text x="178" y="88" font-family="Manrope, Arial, sans-serif" font-size="16" font-weight="800" letter-spacing="2.2">MORRIS COUNTY REAL ESTATE</text>
+    <text x="242" y="119" font-family="Georgia, serif" font-size="21" letter-spacing="7">★★★★★</text>
+  </g>
+</svg>

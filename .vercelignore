@@ -1,0 +1,9 @@
+.env
+.env.*
+.data/
+.netlify/
+.vercel/
+node_modules/
+.git/
+.DS_Store
+npm-debug.log*
