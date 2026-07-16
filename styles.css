@@ -196,7 +196,7 @@ a {
 
 .brand-logo-image {
   display: block;
-  width: clamp(190px, 17vw, 260px);
+  width: clamp(260px, 24vw, 390px);
   height: auto;
 }
 
@@ -4767,7 +4767,7 @@ body.is-loaded .blog-card {
   }
 
   .brand-logo-image {
-    width: clamp(170px, 48vw, 220px);
+    width: clamp(210px, 52vw, 310px);
   }
 
   .brand-text {
@@ -5319,6 +5319,12 @@ body.home-page .luxury-hero .hero-copy {
   color: #ffffff;
 }
 
+.hero-brand .brand-logo-image {
+  width: clamp(280px, 30vw, 470px);
+  padding: clamp(8px, 1.1vw, 14px) clamp(10px, 1.4vw, 18px);
+  background: rgba(255, 255, 255, 0.94);
+}
+
 .hero-brand .brand-mark,
 .hero-brand .brand-mark-word {
   background: rgba(255, 255, 255, 0.92);
@@ -5471,7 +5477,7 @@ body.reviews-page .ratemyagent-widget-shell {
   }
 
   .brand-logo-image {
-    width: min(180px, 52vw);
+    width: min(250px, 58vw);
   }
 
   .brand-text {
@@ -5617,7 +5623,7 @@ body.reviews-page .ratemyagent-widget-shell {
   }
 
   .brand-logo-image {
-    width: min(170px, 54vw);
+    width: min(230px, 58vw);
   }
 
   .brand-mark,

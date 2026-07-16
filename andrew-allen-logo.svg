@@ -1,15 +1,31 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 150" role="img" aria-labelledby="title desc">
-  <title id="title">Andrew Allen Morris County Real Estate logo</title>
-  <desc id="desc">Andrew Allen AA monogram with Morris County Real Estate wordmark and five stars.</desc>
-  <g fill="none" stroke="currentColor" stroke-linecap="square" stroke-linejoin="miter">
-    <path d="M17 136 71 14h17l12 27" stroke-width="11"/>
-    <path d="M40 136 81 48l44 88" stroke-width="11"/>
-    <path d="M56 92h53" stroke-width="10"/>
-    <path d="M77 117h61" stroke-width="10"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1120 320" role="img" aria-labelledby="title desc">
+  <title id="title">Andrew Allen Compass logo</title>
+  <desc id="desc">Andrew Allen AA monogram with Experience Energy Honesty tagline, five stars, divider, and Compass wordmark.</desc>
+  <g fill="none" stroke="#000" stroke-linecap="square" stroke-linejoin="miter">
+    <path d="M184 146 238 24h17l12 27" stroke-width="11"/>
+    <path d="M207 146 248 58l44 88" stroke-width="11"/>
+    <path d="M223 102h53" stroke-width="10"/>
+    <path d="M244 127h61" stroke-width="10"/>
   </g>
-  <g fill="currentColor">
-    <text x="178" y="58" font-family="Manrope, Arial, sans-serif" font-size="34" font-weight="500" letter-spacing="-1.4">Andrew Allen</text>
-    <text x="178" y="88" font-family="Manrope, Arial, sans-serif" font-size="16" font-weight="800" letter-spacing="2.2">MORRIS COUNTY REAL ESTATE</text>
-    <text x="242" y="119" font-family="Georgia, serif" font-size="21" letter-spacing="7">★★★★★</text>
+
+  <g fill="#000">
+    <text x="38" y="214" font-family="Manrope, Arial, Helvetica, sans-serif" font-size="62" font-weight="400" letter-spacing="-3">Andrew Allen</text>
+    <text x="36" y="252" font-family="Manrope, Arial, Helvetica, sans-serif" font-size="27" font-weight="400" letter-spacing="0">Experience</text>
+    <text x="213" y="252" font-family="Manrope, Arial, Helvetica, sans-serif" font-size="27" font-weight="400">|</text>
+    <text x="245" y="252" font-family="Manrope, Arial, Helvetica, sans-serif" font-size="27" font-weight="400" letter-spacing="0">Energy</text>
+    <text x="348" y="252" font-family="Manrope, Arial, Helvetica, sans-serif" font-size="27" font-weight="400">|</text>
+    <text x="381" y="252" font-family="Manrope, Arial, Helvetica, sans-serif" font-size="27" font-weight="400" letter-spacing="0">Honesty</text>
+    <text x="154" y="294" font-family="Georgia, 'Times New Roman', serif" font-size="27" letter-spacing="12">★★★★★</text>
+  </g>
+
+  <line x1="510" y1="84" x2="510" y2="238" stroke="#000" stroke-width="4" />
+
+  <g fill="#000" font-family="Manrope, Arial, Helvetica, sans-serif" font-size="72" font-weight="500" letter-spacing="12">
+    <text x="584" y="188">C</text>
+    <text x="760" y="188">MPASS</text>
+  </g>
+  <g fill="none" stroke="#000" stroke-width="9" stroke-linecap="round">
+    <circle cx="704" cy="164" r="34"/>
+    <line x1="682" y1="186" x2="726" y2="142"/>
   </g>
 </svg>
