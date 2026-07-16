@@ -5314,8 +5314,8 @@ body.home-page .luxury-hero .hero-copy {
 
 .hero-brand {
   position: absolute;
-  top: clamp(22px, 3vw, 34px);
-  left: clamp(22px, 4vw, 56px);
+  top: clamp(18px, 2.4vw, 28px);
+  left: clamp(18px, 3vw, 44px);
   z-index: 5;
   width: auto;
   color: #ffffff;
@@ -5326,6 +5326,11 @@ body.home-page .luxury-hero .hero-copy {
   align-items: center;
   gap: clamp(12px, 1.4vw, 20px);
   text-decoration: none;
+}
+
+.hero-logo-lockup-compact {
+  padding: 0;
+  background: transparent;
 }
 
 .hero-logo-panel {
@@ -5343,12 +5348,16 @@ body.home-page .luxury-hero .hero-copy {
 }
 
 .hero-logo-panel-andrew {
-  width: clamp(230px, 21vw, 330px);
+  width: clamp(190px, 19vw, 310px);
   padding: 0;
 }
 
+.hero-logo-lockup-compact .hero-logo-panel-andrew {
+  width: clamp(230px, 22vw, 350px);
+}
+
 .hero-logo-panel-compass {
-  width: clamp(150px, 13vw, 220px);
+  width: clamp(120px, 10vw, 170px);
   padding: 0;
 }
 
@@ -5568,6 +5577,10 @@ body.reviews-page .ratemyagent-widget-shell {
     gap: 10px;
   }
 
+  body.home-page .hero-logo-lockup-compact .hero-logo-panel-andrew {
+    width: min(270px, 58vw);
+  }
+
   body.home-page .hero-logo-panel-andrew {
     width: min(48vw, 210px);
     padding: 0;
@@ -5646,8 +5659,11 @@ body.reviews-page .ratemyagent-widget-shell {
   }
 
   body.home-page .section-jump-menu {
-    top: 18px;
+    top: 118px;
     right: 18px;
+    left: 18px;
+    justify-content: flex-start;
+    flex-wrap: wrap;
   }
 
   .section-jump-menu a {
@@ -5788,6 +5804,10 @@ body.reviews-page .ratemyagent-widget-shell {
     left: 14px;
     max-width: calc(100vw - 28px);
     gap: 8px;
+  }
+
+  body.home-page .hero-logo-lockup-compact .hero-logo-panel-andrew {
+    width: min(230px, 66vw);
   }
 
   body.home-page .hero-logo-panel-andrew {
@@ -6088,11 +6108,11 @@ body.reviews-page .ratemyagent-widget-shell {
   }
 
   body.home-page .section-jump-menu {
-    top: 18px;
+    top: 118px;
     right: 12px;
-    left: auto;
-    flex-wrap: nowrap;
-    justify-content: flex-end;
+    left: 12px;
+    flex-wrap: wrap;
+    justify-content: flex-start;
   }
 
   body.about-page .realtor-copy h1 {
@@ -6108,7 +6128,7 @@ body.reviews-page .ratemyagent-widget-shell {
 
 @media (max-width: 560px) {
   body.home-page .section-jump-menu {
-    top: 76px;
+    top: 104px;
     right: 12px;
     left: 12px;
     flex-wrap: wrap;
