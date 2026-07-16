@@ -1,11 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1120 320" role="img" aria-labelledby="title desc">
   <title id="title">Andrew Allen Compass logo</title>
   <desc id="desc">Andrew Allen AA monogram with Experience Energy Honesty tagline, five stars, divider, and Compass wordmark.</desc>
-  <g fill="none" stroke="#fff" stroke-linecap="square" stroke-linejoin="miter">
-    <path d="M184 146 238 24h17l12 27" stroke-width="11"/>
-    <path d="M207 146 248 58l44 88" stroke-width="11"/>
-    <path d="M204 102h72" stroke-width="10"/>
-    <path d="M213 127h92" stroke-width="10"/>
+  <g fill="#fff">
+    <polygon points="178,148 235,22 255,22 200,148"/>
+    <polygon points="244,22 257,22 273,58 257,58"/>
+    <polygon points="204,148 246,58 262,58 220,148"/>
+    <polygon points="250,58 266,58 309,148 292,148"/>
+    <polygon points="205,99 278,99 278,112 198,112"/>
+    <polygon points="214,124 305,124 305,137 207,137"/>
   </g>
 
   <g fill="#fff">

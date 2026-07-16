@@ -1,9 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 150" role="img" aria-labelledby="title">
   <title id="title">Andrew Allen AA monogram</title>
-  <g fill="none" stroke="currentColor" stroke-linecap="square" stroke-linejoin="miter">
-    <path d="M17 136 71 14h17l12 27" stroke-width="11"/>
-    <path d="M40 136 81 48l44 88" stroke-width="11"/>
-    <path d="M37 92h72" stroke-width="10"/>
-    <path d="M46 117h92" stroke-width="10"/>
+  <g fill="currentColor">
+    <polygon points="11,138 68,12 88,12 33,138"/>
+    <polygon points="77,12 90,12 106,48 90,48"/>
+    <polygon points="37,138 79,48 95,48 53,138"/>
+    <polygon points="83,48 99,48 142,138 125,138"/>
+    <polygon points="38,89 111,89 111,102 31,102"/>
+    <polygon points="47,114 138,114 138,127 40,127"/>
   </g>
 </svg>

@@ -122,8 +122,42 @@ const reviewFeeds = window.REVIEW_FEEDS || {};
 const rateMyAgentWidget = window.RATE_MY_AGENT_WIDGET || {};
 const googleReviewsWidget = window.GOOGLE_REVIEWS_WIDGET || {};
 const countupNodes = document.querySelectorAll("[data-countup]");
+const lakeGuyPage = document.body.classList.contains("lake-guy-page");
 const pageScrollLocked = document.body.classList.contains("home-scroll-locked");
 const scrollProgress = document.createElement("div");
+
+if (lakeGuyPage) {
+  document.documentElement.classList.add("lake-guy-document");
+
+  const unlockLakeGuyScroll = () => {
+    const documentNodes = [document.documentElement, document.body];
+    const contentNodes = [
+      document.querySelector(".page-shell"),
+      document.querySelector("main"),
+      document.querySelector(".lake-guy-hero"),
+    ].filter(Boolean);
+
+    documentNodes.forEach((node) => {
+      node.style.height = "auto";
+      node.style.minHeight = "100%";
+      node.style.maxHeight = "none";
+      node.style.overflowX = "hidden";
+      node.style.overflowY = "auto";
+      node.style.overscrollBehaviorY = "auto";
+    });
+
+    contentNodes.forEach((node) => {
+      node.style.height = "auto";
+      node.style.maxHeight = "none";
+      node.style.overflowY = node.classList.contains("lake-guy-hero") ? "hidden" : "visible";
+      node.style.overscrollBehaviorY = "auto";
+    });
+  };
+
+  unlockLakeGuyScroll();
+  window.addEventListener("load", unlockLakeGuyScroll);
+  window.addEventListener("resize", unlockLakeGuyScroll);
+}
 
 scrollProgress.className = "scroll-progress";
 document.body.appendChild(scrollProgress);

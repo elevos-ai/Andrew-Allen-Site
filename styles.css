@@ -6276,3 +6276,69 @@ body.is-loaded .site-header {
     transform: none !important;
   }
 }
+
+html.lake-guy-document,
+html:has(body.lake-guy-page) {
+  height: auto;
+  min-height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+body.lake-guy-page,
+body.lake-guy-page .page-shell,
+body.lake-guy-page main {
+  height: auto !important;
+  min-height: 100% !important;
+  max-height: none !important;
+  overflow-y: visible !important;
+  overscroll-behavior-y: auto !important;
+}
+
+body.lake-guy-page {
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
+}
+
+body.lake-guy-page .lake-guy-hero {
+  height: auto !important;
+  max-height: none !important;
+}
+
+body.about-page,
+body.about-page .page-shell,
+body.about-page main,
+body.about-page .realtor-section,
+body.about-page .realtor-layout,
+body.about-page .realtor-copy {
+  height: auto !important;
+  max-height: none !important;
+  overflow-y: visible !important;
+  overscroll-behavior-y: auto !important;
+}
+
+body.about-page {
+  min-height: 100%;
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
+}
+
+body.about-page .realtor-section {
+  min-height: calc(100svh - var(--header-height));
+}
+
+@media (min-width: 721px) {
+  body.about-page .portrait-frame {
+    min-height: clamp(680px, 58vw, 900px) !important;
+    background: #ffffff;
+  }
+
+  body.about-page .portrait-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 22%;
+    transform: scale(1.22) translateY(-6%);
+    transform-origin: center top;
+  }
+}
