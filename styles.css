@@ -67,6 +67,9 @@ body::after {
 
 
 body.lake-guy-page {
+  min-height: 100%;
+  overflow-y: auto;
+  overscroll-behavior-y: auto;
   background:
     radial-gradient(circle at top left, rgba(0, 0, 0, 0.035), transparent 22%),
     linear-gradient(180deg, #ffffff 0%, #f7f7f7 42%, #eeeeee 100%);
@@ -5348,12 +5351,12 @@ body.home-page .luxury-hero .hero-copy {
 }
 
 .hero-logo-panel-andrew {
-  width: clamp(190px, 19vw, 310px);
+  width: clamp(160px, 15vw, 240px);
   padding: 0;
 }
 
 .hero-logo-lockup-compact .hero-logo-panel-andrew {
-  width: clamp(230px, 22vw, 350px);
+  width: clamp(170px, 16vw, 250px);
 }
 
 .hero-logo-panel-compass {
@@ -5578,7 +5581,7 @@ body.reviews-page .ratemyagent-widget-shell {
   }
 
   body.home-page .hero-logo-lockup-compact .hero-logo-panel-andrew {
-    width: min(270px, 58vw);
+    width: min(220px, 52vw);
   }
 
   body.home-page .hero-logo-panel-andrew {
@@ -5807,7 +5810,7 @@ body.reviews-page .ratemyagent-widget-shell {
   }
 
   body.home-page .hero-logo-lockup-compact .hero-logo-panel-andrew {
-    width: min(230px, 66vw);
+    width: min(190px, 62vw);
   }
 
   body.home-page .hero-logo-panel-andrew {

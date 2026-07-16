@@ -3,7 +3,7 @@
   <g fill="none" stroke="currentColor" stroke-linecap="square" stroke-linejoin="miter">
     <path d="M17 136 71 14h17l12 27" stroke-width="11"/>
     <path d="M40 136 81 48l44 88" stroke-width="11"/>
-    <path d="M56 92h53" stroke-width="10"/>
-    <path d="M77 117h61" stroke-width="10"/>
+    <path d="M37 92h72" stroke-width="10"/>
+    <path d="M46 117h92" stroke-width="10"/>
   </g>
 </svg>
