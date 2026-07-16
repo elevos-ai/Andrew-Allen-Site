@@ -5314,8 +5314,8 @@ body.home-page .luxury-hero .hero-copy {
 
 .hero-brand {
   position: absolute;
-  top: clamp(22px, 4vw, 42px);
-  left: clamp(22px, 5vw, 72px);
+  top: clamp(22px, 3vw, 34px);
+  left: clamp(22px, 4vw, 56px);
   z-index: 5;
   width: auto;
   color: #ffffff;
@@ -5324,7 +5324,7 @@ body.home-page .luxury-hero .hero-copy {
 .hero-logo-lockup {
   display: flex;
   align-items: center;
-  gap: clamp(8px, 1.2vw, 16px);
+  gap: clamp(12px, 1.4vw, 20px);
   text-decoration: none;
 }
 
@@ -5343,13 +5343,13 @@ body.home-page .luxury-hero .hero-copy {
 }
 
 .hero-logo-panel-andrew {
-  width: clamp(220px, 24vw, 390px);
-  padding: clamp(8px, 1vw, 12px) clamp(12px, 1.4vw, 18px);
+  width: clamp(230px, 21vw, 330px);
+  padding: 0;
 }
 
 .hero-logo-panel-compass {
-  width: clamp(146px, 14vw, 250px);
-  padding: clamp(17px, 1.9vw, 28px) clamp(14px, 1.6vw, 22px);
+  width: clamp(150px, 13vw, 220px);
+  padding: 0;
 }
 
 .hero-brand .brand-logo-image {
@@ -5565,17 +5565,17 @@ body.reviews-page .ratemyagent-widget-shell {
 
   body.home-page .hero-brand.hero-logo-lockup {
     max-width: calc(100vw - 36px);
-    gap: 6px;
+    gap: 10px;
   }
 
   body.home-page .hero-logo-panel-andrew {
-    width: min(54vw, 220px);
-    padding: 6px 8px;
+    width: min(48vw, 210px);
+    padding: 0;
   }
 
   body.home-page .hero-logo-panel-compass {
-    width: min(34vw, 140px);
-    padding: 13px 10px;
+    width: min(34vw, 150px);
+    padding: 0;
   }
 
   body:not(.home-scroll-locked) main {
@@ -5787,15 +5787,16 @@ body.reviews-page .ratemyagent-widget-shell {
     top: 14px;
     left: 14px;
     max-width: calc(100vw - 28px);
+    gap: 8px;
   }
 
   body.home-page .hero-logo-panel-andrew {
-    width: 55vw;
+    width: 52vw;
   }
 
   body.home-page .hero-logo-panel-compass {
-    width: 31vw;
-    padding: 12px 8px;
+    width: 32vw;
+    padding: 0;
   }
 
   .brand-mark,
